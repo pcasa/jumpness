@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  inflatable_id: 1
+  party_date: 2012-04-15 17:28:46
+  duration: 1
+  address: MyText
+
+two:
+  inflatable_id: 1
+  party_date: 2012-04-15 17:28:46
+  duration: 1
+  address: MyText

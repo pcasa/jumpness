@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<% @inflatable.photos.each do |photo| %>
+	<%= div_for photo do %>
+	<%= image_tag photo.image_url(:medium)%>
+	<% end %>
+<% end %>
+
+<p>
+  <b>Company:</b>
+  <%= @inflatable.company_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @inflatable.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @inflatable.description %>
+</p>
+
+<p>
+  <b>Is active:</b>
+  <%= @inflatable.is_active %>
+</p>
+
+<p>
+  <b>Up to 4 hours:</b>
+  <%= @inflatable.up_to_4_hours %>
+</p>
+
+<p>
+  <b>Up to 8 hours:</b>
+  <%= @inflatable.up_to_8_hours %>
+</p>
+
+
+<%= link_to 'Edit', edit_inflatable_path(@inflatable) %> |
+<%= link_to 'Back', inflatables_path %> | <%= link_to "Book it", new_inflatable_booking_path(@inflatable) %>

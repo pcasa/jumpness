@@ -1,0 +1,9 @@
+
+
+<%= simple_form_for [@inflatable, @booking] do |f| %>
+<%= f.input :inflatable_id, :as => :hidden %>
+<%= f.input :address, :as => :text %>
+<%= f.input :party_date, :as => :string, :input_html => {:class => 'datetime', :value => cookies[:fromdate]} %>
+<%= f.input :duration, :collection => (2..8).to_a, :include_blank => false, :selected => cookies[:duration] %>
+<%= f.button :submit %>
+<% end %>

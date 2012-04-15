@@ -1,0 +1,19 @@
+<p>
+	<%= form_tag near_me_path do %>
+	<div class="row">
+		<div class="span7">
+			
+		  <%= text_field_tag "citystate", nil, :placeholder => "City, State" %>
+		</div>
+	  </div>
+	<div class="row">
+		<div class="span6">
+			<%= text_field_tag "fromdate", nil, :placeholder => "Start Date and Time", :class => 'datetime', :id => 'datetime' %>
+			<span style="margin: 0 10px;">for</span>
+			<%= select_tag "duration", options_for_select((2..8).to_a.map{|s| [s, s]}), :class => 'span1' %> Hours
+		</div>
+	</div>
+	
+	  <%= submit_tag "Search", :class => 'btn btn-primary' %>
+	<% end %>
+</p>

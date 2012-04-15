@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company_id: 1
+  name: MyString
+  description: MyText
+  is_active: false
+  up_to_4_hours: 1.5
+  up_to_8_hours: 1.5
+
+two:
+  company_id: 1
+  name: MyString
+  description: MyText
+  is_active: false
+  up_to_4_hours: 1.5
+  up_to_8_hours: 1.5

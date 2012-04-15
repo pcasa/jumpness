@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-gem 'mysql2'
+
 gem 'devise'
 gem 'slugged'
 gem 'carrierwave'
@@ -13,9 +13,10 @@ gem 'rails3-generators'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-
+group :devlopment do
+  gem 'sqlite3'
+  gem 'mysql2'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

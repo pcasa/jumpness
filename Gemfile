@@ -32,6 +32,7 @@ end
 
 gem 'jquery-rails'
 gem 'ps'
+gem 'pg'
 gem 'simple_form'
 gem 'geocoder'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'

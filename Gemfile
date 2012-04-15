@@ -14,7 +14,7 @@ gem 'rails3-generators'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :devlopment do
-  gem 'sqlite3'
+ # gem 'sqlite3'
   gem 'mysql2'
 end
 

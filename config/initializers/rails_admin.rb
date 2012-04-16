@@ -79,34 +79,36 @@ RailsAdmin.config do |config|
 
   # All fields marked as 'hidden' won't be shown anywhere in the rails_admin unless you mark them as visible. (visible(true))
 
-  # config.model Company do
-  #   # Found associations:
-  #     configure :user, :belongs_to_association 
-  #     configure :inflatables, :has_many_association 
-  #     configure :phones, :has_many_association   #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :user_id, :integer         # Hidden 
-  #     configure :name, :string 
-  #     configure :street1, :string 
-  #     configure :street2, :string 
-  #     configure :city, :string 
-  #     configure :state, :string 
-  #     configure :zipcode, :string 
-  #     configure :status, :string 
-  #     configure :contact_email, :string 
-  #     configure :about, :text 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-  #     configure :latitude, :float 
-  #     configure :longitude, :float 
-  #     configure :cached_slug, :string   #   # Sections:
-  #   list do; end
-  #   export do; end
-  #   show do; end
-  #   edit do; end
-  #   create do; end
-  #   update do; end
-  # end
+   config.model Company do
+     # Found associations:
+       configure :user, :belongs_to_association 
+       configure :inflatables, :has_many_association 
+       configure :phones, :has_many_association   #   # Found columns:
+       configure :id, :integer 
+       configure :user_id, :integer         # Hidden 
+       configure :name, :string 
+       configure :street1, :string 
+       configure :street2, :string 
+       configure :city, :string 
+       configure :state, :string 
+       configure :zipcode, :string 
+       configure :status, :string 
+       configure :contact_email, :string 
+       configure :about, :text do
+         ckeditor true
+       end
+       configure :created_at, :datetime 
+       configure :updated_at, :datetime 
+       configure :latitude, :float 
+       configure :longitude, :float 
+       configure :cached_slug, :string   #   # Sections:
+     list do; end
+     export do; end
+     show do; end
+     edit do; end
+     create do; end
+     update do; end
+   end
    config.model Inflatable do
      # Found associations:
        configure :company, :belongs_to_association 

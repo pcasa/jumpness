@@ -1,11 +1,13 @@
 JumpnessCore::Application.routes.draw do
-  
+  mount Ckeditor::Engine => '/ckeditor'
+
+  resources :bookings
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   match '/inflatables/near_me' => 'inflatables#near_me', :as => :near_me
   
-  resources :inflatables do
+  resources :inflatables, :only => [:index, :show] do
     resources :photos, :only => [:create, :destroy, :make_primary] do
       member do
         get 'make_primary', :as => :make_primary

@@ -82,7 +82,7 @@ class InflatablesController < ApplicationController
   end
   
   def near_me
-    if params[:citystate]
+    if params[:citystate].present?
       # origin = Geocoder.coordinates(params[:citystate])
       # puts "-- what origin returned: #{origin}"
       cookies.permanent[:citystate] = params[:citystate] if params[:citystate].present?

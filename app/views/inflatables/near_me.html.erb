@@ -1,11 +1,4 @@
 <%= render :partial => 'partials/main_search_form' %>
 
-<% @inflatables.each do |inflatable| %>
-	<%= div_for inflatable do %>
-		<% if inflatable.primary_image %>
-			<%= link_to image_tag(inflatable.primary_image.image_url(:medium)), inflatable  %><br />
-		<% end %>
-		<%= link_to inflatable.name, inflatable %>
-	<% end %>
-<% end %>
+<%= render :partial => 'partials/inflatable', :collection => @inflatables %>
 

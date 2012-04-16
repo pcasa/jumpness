@@ -37,5 +37,24 @@
 </p>
 
 
-<%= link_to 'Edit', edit_inflatable_path(@inflatable) %> |
-<%= link_to 'Back', inflatables_path %> | <%= link_to "Book it", new_inflatable_booking_path(@inflatable) %>
+<% if cookies[:citystate] && cookies[:fromdate] && cookies[:duration] %>
+
+<p><b>Is it bookable?</b> <%= @inflatable.is_bookable(cookies[:fromdate], cookies[:duration])%></p>
+<h2>Booked For:</h2>
+<p>
+	<% @inflatable.booked_for.each do |booking| %>
+		<%= booking.party_date.strftime('%D %r') %> til <%= (booking.party_date + (booking.duration).hours).strftime('%D %r')  %> because duration is: <%= booking.duration %>
+		<h3>Testing cover</h3>
+		<p>from date: <%= (booking.party_date..booking.party_date + (booking.duration).hours).cover?(DateTime.strptime(cookies[:fromdate], '%m/%d/%Y %H:%M %p') ) %><br />
+		to date: <%= (booking.party_date..booking.party_date + (booking.duration).hours).cover?(DateTime.strptime(cookies[:fromdate], '%m/%d/%Y %H:%M %p') + (cookies[:duration].to_i).hours ) %></p>
+	<% end %>
+</p>
+
+<h3>You are looking for:</h3>
+<p>
+start: <%= cookies[:fromdate] %><br />
+to: <%= (DateTime.strptime(cookies[:fromdate], '%m/%d/%Y %H:%M %p') + (cookies[:duration].to_i).hours).strftime('%D %r')  %><br/>
+which is a duration of:	<%= cookies[:duration] %> hours
+</p>
+<% end %>
+<%= link_to 'Back', request.referrer || inflatables_path %> | <%= link_to "Book it", new_inflatable_booking_path(@inflatable) %>

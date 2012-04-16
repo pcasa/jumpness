@@ -20,7 +20,7 @@ Phone.destroy_all
 @phone = Phone.create!(:number => "2488806797", :phone_type => "mobile", :provider => "Verizon", :company_id => @company.id)
 
 
-Inflatable.destroy_all
+# Inflatable.destroy_all
 
 #:buffer_time, :d_height, :d_length, :d_width, :description, :inflatable_type, :is_active, :name, :up_to_4_hours, :up_to_8_hours, :cached_slug, :company_id
 Inflatable.create(:buffer_time => 30, :description => "Call for last minute specials! A colorful inflatable bounce house that provides a big bouncing area for your event. Whether you call it a bounce house, moon bounce, inflatable or even jumpy thing, this party rental will provide entertainment for any event.", :is_active => true, :name => "Wacky Bouncer", :up_to_4_hours => 165.00, :up_to_8_hours => 195.00, :company_id => @company.id)

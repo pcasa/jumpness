@@ -36,6 +36,7 @@ gem 'pg'
 gem 'simple_form'
 gem 'geocoder'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'ckeditor', '3.7.0.rc3'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

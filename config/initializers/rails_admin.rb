@@ -107,28 +107,30 @@ RailsAdmin.config do |config|
   #   create do; end
   #   update do; end
   # end
-  # config.model Inflatable do
-  #   # Found associations:
-  #     configure :company, :belongs_to_association 
-  #     configure :photos, :has_many_association   #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :company_id, :integer         # Hidden 
-  #     configure :name, :string 
-  #     configure :description, :text 
-  #     configure :buffer_time, :integer 
-  #     configure :is_active, :boolean 
-  #     configure :up_to_4_hours, :float 
-  #     configure :up_to_8_hours, :float 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-  #     configure :cached_slug, :string   #   # Sections:
-  #   list do; end
-  #   export do; end
-  #   show do; end
-  #   edit do; end
-  #   create do; end
-  #   update do; end
-  # end
+   config.model Inflatable do
+     # Found associations:
+       configure :company, :belongs_to_association 
+       configure :photos, :has_many_association   #   # Found columns:
+       configure :id, :integer 
+       configure :company_id, :integer         # Hidden 
+       configure :name, :string 
+       configure :description, :text do
+         ckeditor true
+       end
+       configure :buffer_time, :integer 
+       configure :is_active, :boolean 
+       configure :up_to_4_hours, :float 
+       configure :up_to_8_hours, :float 
+       configure :created_at, :datetime 
+       configure :updated_at, :datetime 
+       configure :cached_slug, :string   #   # Sections:
+     list do; end
+     export do; end
+     show do; end
+     edit do; end
+     create do; end
+     update do; end
+   end
   # config.model Phone do
   #   # Found associations:
   #     configure :company, :belongs_to_association   #   # Found columns:

@@ -4,18 +4,18 @@ class BookingsController < ApplicationController
   
   
   def new
-    
   end
   
   def create
+    puts "-- what bookings has: #{@booking.inspect}"
     @booking.party_date = DateTime.strptime(params[:booking][:party_date], '%m/%d/%Y %H:%M %p') if params[:booking][:party_date].present?
     
     respond_to do |format|
       if @booking.save
-        format.html {redirect_to root_url, :notice => 'Created booking'}
+        format.html {redirect_to @booking, :notice => 'Created booking'}
         format.js
       else
-        format.html { render action: "new" }
+        format.html { render action: "new", alert: "Something went wrong" }
       end
     end
   end
@@ -29,7 +29,6 @@ class BookingsController < ApplicationController
     
     def find_inflatable
       @inflatable = Inflatable.find_using_slug(params[:inflatable_id])
-      puts "== What I found: #{params[:inflatable_id]}"
       raise ActiveRecord::RecordNotFound unless @inflatable
     end
     

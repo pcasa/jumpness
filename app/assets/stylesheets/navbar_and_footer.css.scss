@@ -1,0 +1,91 @@
+@import "variables";
+
+html, body{
+	height:100%;
+}
+
+footer{
+	text-align:center;
+	color: $font-color;
+	padding: 0 10px;
+	p{
+		margin-bottom: 11px;
+		margin-top:13px;
+	}
+	a{
+		color: $font-color;
+		&:hover{
+			background-color:rgba(255,255,255,0.05);
+			text-decoration:none;
+		}
+		&:visited{
+			color: $font-color;
+		}
+	}
+	position:relative;
+	.divisor{
+		margin:auto;
+		text-align:center;
+		height:2px;
+		position:absolute;
+		top:-8px;
+		
+		img{
+		width:50%;
+		height:100%;
+		}
+	}
+}
+
+.wrapper{
+	min-height: 100%;
+	height: auto !important; /* ie7 fix */
+	height: 100%;
+	margin: 0 auto -43px;
+}
+
+.push{
+	height: 63px; /* arbitrary space between footer and rest of content when they are close */
+}
+
+.wrapper > .container-fluid {
+	padding-top: 120px;
+}
+
+.navbar{
+	color: $font-color;
+	.nav > li > a {
+		color: $font-color;
+	}
+	
+	a{
+		color: $font-color;
+		&:hover{
+			background-color:rgba(255,255,255,0.05);
+			text-decoration:none;
+		}
+		&:visited{
+			color: $font-color-anchor-visited;
+		}
+	}
+	
+	.selected{
+		background-color: $header-background;
+		a, a:hover, a:visited{
+			color: $font-color-anchor-visited;
+		}
+	}
+	
+	.navbar-inner{
+	  background: none;
+	  background-color: transparent;
+	  box-shadow: none;
+	}
+	.navbar-top-space{
+		background-color: $header-background;
+		height:10px;
+	}
+	.brand{
+	  width:413px;
+	}
+}

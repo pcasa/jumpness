@@ -1,0 +1,46 @@
+@import "variables";
+
+html{
+  background: none;
+  background-color: transparent;
+}
+body{
+	background: url(<%=image_path "homepage_city.jpg"%>) no-repeat center center;
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	-ie-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: cover;
+	color:$font-color;
+	
+	a{
+		color: $font-color-anchor;
+		&:hover{
+			background-color:rgba(255,255,255,0.05);
+			text-decoration:none;
+		}
+		&:visited{
+			color: $font-color-anchor-visited;
+		}
+	}
+}
+.container-fluid{
+  background: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+.logo{
+	position:absolute;
+	background:url(<%=image_path "logo.png"%>) no-repeat center center;
+	width:413px;
+	height:318px;
+	top:-20px;
+	z-index:-5;
+}
+.container-fluid > .row-fluid > .centered-span{
+  margin: 0px auto;
+  float:none;
+  h1, h2, h3, p{
+    text-align:center;
+  }
+}

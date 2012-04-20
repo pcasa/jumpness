@@ -9,7 +9,7 @@ class Company < ActiveRecord::Base
   
   attr_accessible :about, :city, :max_radius, :name, :state, :status, :street1, :street2, :user_id, :zipcode, :contact_email, :cached_slug, :phones_attributes, :inflatables_attributes
   
-  validates_presence_of :user_id, :contact_email, :name
+  validates_presence_of :user_id, :contact_email, :name, :max_radius
   
   accepts_nested_attributes_for :phones, :allow_destroy => true, :reject_if => proc { |obj| obj.blank? }
   accepts_nested_attributes_for :inflatables, :allow_destroy => true, :reject_if => proc { |obj| obj.blank? }

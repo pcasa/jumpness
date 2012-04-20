@@ -9,6 +9,7 @@
 <body>
 	<ul>
 		<li><%= link_to "Home", root_path %></li>
+		<li><%= link_to "Rentals", inflatables_path %></li>
 	</ul>
 	<% flash.each do |name, msg| %>
 	  <div class="alert alert-<%= name == :notice ? "success" : "error" %>">

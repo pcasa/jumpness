@@ -19,15 +19,11 @@ class Inflatable < ActiveRecord::Base
     photos.where(:primary => true).first
   end
   
-  def booked_for
-    bookings.where('party_date >= ?', Time.now)
-  end
-  
   def is_bookable(fromdate, duration)
     r = true
     interested_date = DateTime.strptime(fromdate, '%m/%d/%Y %H:%M %p') 
     interested_to = (interested_date + (duration.to_i).hours)
-    bookings.each do |booking|
+    bookings.coming_up.each do |booking|
       date_range = (booking.party_date..booking.party_date + (booking.duration).hours)
       r = false if date_range.cover?(interested_date) || date_range.cover?(interested_to)
     end

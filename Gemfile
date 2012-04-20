@@ -10,12 +10,15 @@ gem 'flash_cookie_session'
 gem 'haml'
 gem 'paper_trail', '~> 2'
 gem 'rails3-generators'
+gem 'date_validator'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :devlopment do
  # gem 'sqlite3'
   gem 'mysql2'
+  gem 'thin'
+  gem 'unicorn'
 end
 
 # Gems used only for assets and not required

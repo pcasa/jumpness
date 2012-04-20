@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120416080811) do
+ActiveRecord::Schema.define(:version => 20120420120541) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "inflatable_id"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20120416080811) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "cached_slug"
+    t.integer  "max_radius"
   end
 
   add_index "companies", ["cached_slug"], :name => "index_companies_on_cached_slug"

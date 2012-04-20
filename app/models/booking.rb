@@ -7,21 +7,25 @@ class Booking < ActiveRecord::Base
   
   validates_presence_of :address, :duration, :party_date, :inflatable_id
   
-  validate :address_checker, :party_within_company_range
   
   validates :party_date,
     :date => {:after => Date.today, :message => 'must be after today'},
     :on => :create
   
+  validate :inflatable_is_bookable, :address_checker, :party_within_company_range
+  
+  
   private
   
+  def inflatable_is_bookable
+    puts "-- what is_bookable is returning: #{inflatable.is_bookable(party_date.strftime('%m/%d/%Y %H:%M %p'), duration)}"
+    errors.add(:party_date, "Unable to book for that date") unless inflatable.is_bookable(party_date.strftime('%m/%d/%Y %H:%M %p'), duration)
+  end
   
   def address_checker
-    puts "-- address is: #{address}"
     # below is regex to remove the /r return character then see if each line is just white space
     #  Looking for at least 2 lines and that characters are at least 5 characters long "1 1st"
     lines = address.gsub(/\r/, "").split(/\n/).select{ |l| l if l.gsub("\r", "").length > 5 && l != nil }
-    puts "-- lines seen are: #{lines.length} which is: #{lines}"
     # throws error if less than 2 lines
     if (lines.length < 2)
       errors.add(:address, "is invalid format<b><br>street<br>city, state zip</b>") 
@@ -32,7 +36,6 @@ class Booking < ActiveRecord::Base
         errors.add(:address, "is invalid format for city, state zip (last line)") 
       else
         zip_info = city_state_zip_sec.last.split(' ').last
-        puts "-- zip info: #{zip_info} and is it a int #{zip_info.to_i}"
         errors.add(:address, "zip code is invalid") unless is_number?(zip_info) && zip_info.length == 5
       end
       
@@ -43,7 +46,7 @@ class Booking < ActiveRecord::Base
     begin
       lines = address.gsub(/\r/, "").split(/\n/).select{ |l| l if l.gsub("\r", "").length > 5 && l != nil }
       dist_from = inflatable.company.distance_from(lines.join(', ')) 
-      errors.add(:address, "address to far for delivery") unless dist_from > inflatable.company.max_radius
+      errors.add(:address, "address to far for delivery") if dist_from > inflatable.company.max_radius
     rescue
       errors.add(:address, "having problem creating with address, please contact site administrator")
     end

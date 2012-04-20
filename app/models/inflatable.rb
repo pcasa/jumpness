@@ -24,6 +24,7 @@ class Inflatable < ActiveRecord::Base
     interested_date = DateTime.strptime(fromdate, '%m/%d/%Y %H:%M %p') 
     interested_to = (interested_date + (duration.to_i).hours)
     bookings.coming_up.each do |booking|
+      puts "-- in is_bookable and booking is: #{booking.inspect}"
       date_range = (booking.party_date..booking.party_date + (booking.duration).hours)
       r = false if date_range.cover?(interested_date) || date_range.cover?(interested_to)
     end

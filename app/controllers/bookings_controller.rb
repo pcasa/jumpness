@@ -7,12 +7,17 @@ class BookingsController < ApplicationController
   end
   
   def create
-    puts "-- what bookings has: #{@booking.inspect}"
+    puts "-- what bookings has: #{@booking.inspect} but params has: #{params}"
+    cookies.permanent[:fromdate] = params[:booking][:party_date] if params[:booking][:party_date].present?
+    cookies.permanent[:duration] = params[:booking][:duration] if params[:booking][:duration].present?
     @booking.party_date = DateTime.strptime(params[:booking][:party_date], '%m/%d/%Y %H:%M %p') if params[:booking][:party_date].present?
     
     respond_to do |format|
       if @booking.save
-        format.html {redirect_to @booking, :notice => 'Created booking'}
+        cookies.delete :citystate
+        cookies.delete :fromdate
+        cookies.delete :duration
+        format.html {redirect_to [@inflatable, @booking], :notice => 'Created booking'}
         format.js
       else
         format.html { render action: "new", alert: "Something went wrong" }

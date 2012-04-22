@@ -5,7 +5,7 @@ html{
   background-color: transparent;
 }
 body{
-	background: url(<%=image_path "homepage_city.jpg"%>) no-repeat center center;
+	background: url(<%=image_path "homepage_city.jpg"%>) no-repeat center center #749bc6;
 	-o-background-size: cover;
 	-moz-background-size: cover;
 	-ie-background-size: cover;
@@ -35,6 +35,17 @@ body{
 	width:413px;
 	height:318px;
 	top:-20px;
+	left:20px;
+	z-index:-5;
+}
+
+.phone{
+  position:absolute;
+	background:url(<%=image_path "phone.png"%>) no-repeat center center;
+	width:413px;
+	height:318px;
+	top:-70px;
+	left:400px;
 	z-index:-5;
 }
 .container-fluid > .row-fluid > .centered-span{
@@ -43,4 +54,8 @@ body{
   h1, h2, h3, p{
     text-align:center;
   }
+}
+
+.well{
+  background: rgba(0,0,0, 0.03);
 }

@@ -14,6 +14,7 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require ckeditor/init
+//= require twitter/bootstrap
 //= require_tree .
 
 $(function (){  // enabledate picker

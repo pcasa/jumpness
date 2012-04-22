@@ -9,5 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require bootstrap.css.less
+ *= require layout.css.scss.erb
+ *= require navbar_and_footer.css.scss
+ *= require home.css.scss
+ *= require scaffolds.css.scss
+ *= require bootstrap_responsive.css.less
 */

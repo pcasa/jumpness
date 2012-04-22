@@ -29,7 +29,7 @@ footer{
 		height:2px;
 		position:absolute;
 		top:-8px;
-		
+		width:100%;
 		img{
 		width:50%;
 		height:100%;
@@ -69,9 +69,9 @@ footer{
 		}
 	}
 	
-	.selected{
-		background-color: $header-background;
+	.active{
 		a, a:hover, a:visited{
+			background-color: $header-background;
 			color: $font-color-anchor-visited;
 		}
 	}
@@ -87,5 +87,18 @@ footer{
 	}
 	.brand{
 	  width:413px;
+	}
+	
+	.btn-navbar, .btn-navbar:hover{
+		background: $header-background;
+	}
+	
+	.dropdown-menu a:hover{
+		background-color: $header-background;
+	}
+	
+	.nav-collapse.in, .nav-collapse.collapse{
+		background-color: $header-background;
+		border-radius:10px;
 	}
 }

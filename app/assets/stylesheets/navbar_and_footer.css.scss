@@ -49,7 +49,7 @@ footer{
 }
 
 .wrapper > .container-fluid {
-	padding-top: 120px;
+	padding-top: 20px;
 }
 
 .navbar{
@@ -86,11 +86,14 @@ footer{
 		height:10px;
 	}
 	.brand{
-	  width:413px;
+		width:433px;
+		height:1px;
+		padding:0px;
 	}
 	
 	.btn-navbar, .btn-navbar:hover{
 		background: $header-background;
+		margin-bottom:-40px;
 	}
 	
 	.dropdown-menu a:hover{
@@ -100,5 +103,37 @@ footer{
 	.nav-collapse.in, .nav-collapse.collapse{
 		background-color: $header-background;
 		border-radius:10px;
+		width:85%;
 	}
+	
+}
+
+.navbar-fixed-top{
+	margin-bottom:0px!important;
+	position:fixed!important;
+}
+
+.logo_phone_wrapper{
+  position:relative;
+	width:100%;
+	height:318px;
+	top:20px;
+	left:20px;
+	z-index:-5;
+	margin-bottom:-220px;
+}
+.logo{
+	margin-top:-20px;
+	width:45%;
+	height:100%;
+	max-width:413px;
+	max-height:318px;
+	float:left;
+}
+.phone{
+  margin-top:40px;
+	width:45%;
+	height:100%;
+	max-width:305px;
+	max-height:33px;
 }

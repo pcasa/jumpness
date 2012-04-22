@@ -12,12 +12,13 @@ gem 'paper_trail', '~> 2'
 gem 'rails3-generators'
 gem 'date_validator'
 
+gem 'thin'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development do
   #gem 'sqlite3'
   gem 'mysql2'
-  gem 'thin'
   gem 'unicorn'
 end
 

@@ -14,5 +14,6 @@
  *= require navbar_and_footer.css.scss
  *= require home.css.scss
  *= require scaffolds.css.scss
+ *= require jquery-ui
  *= require bootstrap_responsive.css.less
 */

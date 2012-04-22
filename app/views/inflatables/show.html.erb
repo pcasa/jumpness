@@ -42,7 +42,7 @@
 <p><b>Is it bookable?</b> <%= @inflatable.is_bookable(cookies[:fromdate], cookies[:duration])%></p>
 <h2>Booked For:</h2>
 <p>
-	<% @inflatable.booked_for.each do |booking| %>
+	<% @inflatable.bookings.coming_up.each do |booking| %>
 		<%= booking.party_date.strftime('%D %r') %> til <%= (booking.party_date + (booking.duration).hours).strftime('%D %r')  %> because duration is: <%= booking.duration %>
 		<h3>Testing cover</h3>
 		<p>from date: <%= (booking.party_date..booking.party_date + (booking.duration).hours).cover?(DateTime.strptime(cookies[:fromdate], '%m/%d/%Y %H:%M %p') ) %><br />

@@ -15,7 +15,7 @@ User.destroy_all
 #  Phone: (248) 880-6797
 #  Email: info@jumpness.com
 Company.destroy_all
-@company = Company.create!(:name => "Jumpness llc", :user_id => @user.id, :street1 => "", :city => "Milford", :state => "MI", :zipcode => 48280, :contact_email => "info@jumpness.com")
+@company = Company.create!(:name => "Jumpness llc", :user_id => @user.id, :street1 => "", :city => "Milford", :state => "MI", :zipcode => 48280, :contact_email => "info@jumpness.com", :max_radius => 40)
 Phone.destroy_all
 @phone = Phone.create!(:number => "2488806797", :phone_type => "mobile", :provider => "Verizon", :company_id => @company.id)
 

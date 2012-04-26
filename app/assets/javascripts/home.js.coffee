@@ -586,7 +586,7 @@ $(document).ready ->
 		"Zilwaukee"]
 		$('input#citystate').autocomplete {source: michigan_cities, select: (event,ui)->
 			$('.step1').hide('slow')
-			$('.step2').show("bounce", {times:3}, 300)
+			$('.step2').fadeIn('slow')
 			$('.step3').hide(0)
 			$('.step4').hide(0)
 			
@@ -611,26 +611,30 @@ $(document).ready ->
 			altField: "#date"
 			altFormat: "DD, d MM, yy"
 			onSelect: (dateText, inst) ->
-				$('.step2').hide("bounce", {times:5}, 200, ()->
+				$('.step2').fadeOut('fast', ()->
 					$('.step3').fadeIn('slow')
 					$('.step4').fadeIn('slow')
 					
 				)
 		)
 		
-		$("#date").click (event)->
-			$('.step2').show("bounce", {times:3}, 300)
+		$("#date").click( (event)->
+			$('.step2').fadeIn('slow')
 			$('.step3').hide(0)
 			$('.step4').hide(0)
-			
-			
-		$("#from, #to").timepicker(
-			ampm: true
-			hourMin: 8
-			hourMax: 20
-			stepMinute: 15
-			showAnim: "bounce"
-		)
+		).readonly = true
+		
+		$("#from, #to").combobox()
+#			
+#		$("#from, #to").timepicker(
+#			ampm: true
+#			hourMin: 8
+#			hourMax: 20
+#			stepMinute: 15
+#			showAnim: "bounce"
+#		).readonly = true
+
+		$(".test").button()
 	catch e
 		alert(e)
 

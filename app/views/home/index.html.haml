@@ -9,9 +9,11 @@
         .fieldset
           #date-div
       .step3
-        = text_field_tag "date", nil, :placeholder => "Date", :class => "input-large", :readonly => "readonly"
-        = text_field_tag "from", nil, :placeholder => "From =)", :class => "input-large", :readonly => "readonly"
-        = text_field_tag "to", nil, :placeholder => "To =(", :class => "input-large", :readonly => "readonly"
+        %div
+          = text_field_tag "date", nil, :placeholder => "Date", :class => "input-xxlarge"
+        %div
+          = select_tag "from", options_for_select([["6 am", 6], ["7 am", 7], ["8 am", 8], ["9 am", 9], ["10 am", 10], ["11 am", 11], ["12 pm", 12], ["1 pm", 13], ["2 pm", 14], ["3 pm", 15], ["4 pm", 16], ["5 pm", 17], ["6 pm", 18]]), :placeholder => "From =)", :class => "input-large"
+          = select_tag "to", options_for_select([["6 am", 6], ["7 am", 7], ["8 am", 8], ["9 am", 9], ["10 am", 10], ["11 am", 11], ["12 pm", 12], ["1 pm", 13], ["2 pm", 14], ["3 pm", 15], ["4 pm", 16], ["5 pm", 17], ["6 pm", 18]]), :placeholder => "To =(", :class => "input-large"
 
       .step4
         %button.btn.btn-primary.btn-large.btn-danger{type: "submit"}

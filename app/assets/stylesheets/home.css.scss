@@ -15,9 +15,9 @@
   background:none;
 
   input{
-	font-size:16px;
-	height:30px;
-	padding-left:10px;
+	font-size:18px!important;
+	height:40px;
+	padding-left:20px!important;
   }
 }
 
@@ -33,7 +33,6 @@
 .step3{
 	display:none;
 	text-align:center;
-
 }
 
 .step4{
@@ -43,3 +42,40 @@
 #ui-datepicker-div{
 	width:220px;
 }
+
+.step3 .ui-combobox {
+	position: relative;
+	display: inline-block;
+	margin-right:40px;
+	> input.ui-widget{
+		width:150px;
+	}
+	a{
+		.ui-button-icon-primary{
+			margin:10px 0px 5px 0px;
+		}
+	}
+}
+
+.step3 a.ui-button, .step3 a.ui-button:hover {
+	position: absolute;
+	top: 0;
+	margin-left: -1px;
+	padding: 0;
+	/* adjust styles for IE 6/7 */
+	*height: 1.7em;
+	*top: 0.1em;
+	background-color: #e6e6e6;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+  background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
+  background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+  background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+  background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+  padding: 8px 0px 0px 10px;
+  height:40px;
+
+}
+

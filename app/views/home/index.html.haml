@@ -1,0 +1,19 @@
+.row-fluid
+  .hero-unit
+    = form_tag near_me_path do
+      .step1
+        %h1 Bounce house rentals in Michigan, the cool ones.
+        %p Search available rentals for your event below or browse all rentals.
+      = text_field_tag "citystate", nil, :placeholder => "What city is your event in?", :class => "input-xxlarge"
+      .step2
+        .fieldset
+          #date-div
+      .step3
+        = text_field_tag "date", nil, :placeholder => "Date", :class => "input-large", :readonly => "readonly"
+        = text_field_tag "from", nil, :placeholder => "From =)", :class => "input-large", :readonly => "readonly"
+        = text_field_tag "to", nil, :placeholder => "To =(", :class => "input-large", :readonly => "readonly"
+
+      .step4
+        %button.btn.btn-primary.btn-large.btn-danger{type: "submit"}
+          %i.icon-ok.icon-white
+          Submit

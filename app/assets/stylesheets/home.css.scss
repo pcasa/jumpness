@@ -20,3 +20,26 @@
 	padding-left:10px;
   }
 }
+
+.step2{
+	display:none;
+	text-align:center;
+	
+	#date-div > .ui-datepicker{
+		margin:auto;
+	}
+}
+
+.step3{
+	display:none;
+	text-align:center;
+
+}
+
+.step4{
+	display:none;
+}
+
+#ui-datepicker-div{
+	width:220px;
+}

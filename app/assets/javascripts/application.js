@@ -14,14 +14,6 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require ckeditor/init
+//= require jquery-ui-timepicker-addon
+//= require home
 //= require twitter/bootstrap
-//= require_tree .
-
-$(function (){  // enabledate picker
-    $('.datetime').datetimepicker({
-		ampm: true,
-		stepMinute: 15,
-		minDate: 0,
-		maxDate: 210
-	});
-});

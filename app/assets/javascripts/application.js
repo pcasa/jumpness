@@ -14,7 +14,7 @@
 //= require jquery-ui-1.8.19.custom.min
 //= require jquery_ujs
 //= require ckeditor/init
-//= require jquery-ui-timepicker-addon
-//= require jquery-combobox
-//= require home
+//= require jquery-ui-timepicker-addon.js
+//= require jquery-combobox.js
+//= require home.js
 //= require twitter/bootstrap

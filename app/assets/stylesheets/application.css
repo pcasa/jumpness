@@ -15,6 +15,6 @@
  *= require home.css.scss
  *= require scaffolds.css.scss
  *= require jquery_ui/jquery_ui.css
- *= require jquery-ui-timepicker-addon
+ *= require jquery-ui-timepicker-addon.css
  *= require bootstrap_responsive.css.less
 */

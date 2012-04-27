@@ -1,0 +1,21 @@
+.row-fluid
+  .hero-unit
+    = form_tag near_me_path do
+      .step1
+        %h1 Bounce house rentals in Michigan, the cool ones.
+        %p Search available rentals for your event below or browse all rentals.
+      = text_field_tag "citystate", nil, :placeholder => "What city is your event in?", :class => "input-xxlarge"
+      .step2
+        .fieldset
+          #date-div
+      .step3
+        %div
+          = text_field_tag "date", nil, :placeholder => "Date", :class => "input-xxlarge"
+        %div
+          = select_tag "from", options_for_select([["6 am", 6], ["7 am", 7], ["8 am", 8], ["9 am", 9], ["10 am", 10], ["11 am", 11], ["12 pm", 12], ["1 pm", 13], ["2 pm", 14], ["3 pm", 15], ["4 pm", 16], ["5 pm", 17], ["6 pm", 18]]), :placeholder => "From =)", :class => "input-large"
+          = select_tag "to", options_for_select([["6 am", 6], ["7 am", 7], ["8 am", 8], ["9 am", 9], ["10 am", 10], ["11 am", 11], ["12 pm", 12], ["1 pm", 13], ["2 pm", 14], ["3 pm", 15], ["4 pm", 16], ["5 pm", 17], ["6 pm", 18]]), :placeholder => "To =(", :class => "input-large"
+
+      .step4
+        %button.btn.btn-primary.btn-large.btn-danger{type: "submit"}
+          %i.icon-ok.icon-white
+          Submit

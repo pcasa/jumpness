@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/sferik/rails_admin.git
-  revision: e12f8b4fd0d2198da2684ad787c488e26564eaa0
+  revision: a6b65ec5fa1b6f035ccf1c63f55a2d90b2ebeb78
   specs:
     rails_admin (0.0.1)
       bbenezech-nested_form (~> 0.0.6)
@@ -156,7 +156,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     remotipart (1.0.2)
-    sass (3.1.15)
+    sass (3.1.16)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -172,7 +172,8 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    subexec (0.2.1)
+    sqlite3 (1.3.6)
+    subexec (0.2.2)
     systemu (2.5.0)
     therubyracer (0.10.1)
       libv8 (~> 3.3.10)
@@ -226,6 +227,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simple_form
   slugged
+  sqlite3
   thin
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)

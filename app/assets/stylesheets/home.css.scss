@@ -1,24 +1,49 @@
+@import "variables";
+
 .hero-unit{
-  h1{
-    font-size:30px;
-  }
-  form{
-    text-align:center;
-	margin-top:20px;
-  }
-  h1, h2, h3, p{
-    text-align:center;
-  }
+	background: none;
+	box-shadow: 1px 1px 5px #aaccf2;
+	margin: 40px auto;
+	padding: 20px;
+	float:none;
 
-  margin: 0px auto;
-  float:none;
-  background:none;
+	h1{
+		font-size:30px;
+		text-transform:none;
+	}
+	form{
+		text-align:center;
+		margin-top:20px;
+	}
+	h1, h2, h3, p{
+		text-align:center;
+	}
 
-  input{
-	font-size:18px!important;
-	height:40px;
-	padding-left:20px!important;
-  }
+	input{
+		font-size:$input-hero-fontsize!important;
+		height:$input-hero-height;
+		padding-left:20px!important;
+		background: rgba(0,0,0,0.10);
+		color:white!important;
+		text-shadow:none!important;
+	}
+	
+	input::-webkit-input-placeholder{
+		color:rgba(255,255,255,0.6);
+	}
+	input:-moz-placeholder{
+		color:rgba(255,255,255,0.6);
+	}
+
+	.btn-large{
+		font-size:$input-hero-fontsize;
+		.icon-white{
+			margin-top: 8px;
+			width: 20px;
+			height: 20px;
+		}
+	}
+
 }
 
 .step2{
@@ -33,49 +58,49 @@
 .step3{
 	display:none;
 	text-align:center;
+	
+	.ui-combobox {
+		position: relative;
+		display: inline-block;
+		margin-right:40px;
+		> input.ui-widget{
+			width:150px;
+		}
+		a{
+			.ui-button-icon-primary{
+				margin:15px 0px 5px 0px;
+			}
+		}
+	}
+	
+	a.ui-button, a.ui-button:hover {
+		position: absolute;
+		top: 0;
+		margin-left: -1px;
+		padding: 0;
+		/* adjust styles for IE 6/7 */
+		*height: 1.7em;
+		*top: 0.1em;
+		background-color: #e6e6e6;
+		background-repeat: no-repeat;
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
+		background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+		background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
+		background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+		background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+		background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+		padding: 8px 0px 0px 10px;
+		height:$input-hero-height;
+	}
+	
+	#ui-datepicker-div{
+		width:220px;
+	}
 }
 
 .step4{
 	display:none;
-}
-
-#ui-datepicker-div{
-	width:220px;
-}
-
-.step3 .ui-combobox {
-	position: relative;
-	display: inline-block;
-	margin-right:40px;
-	> input.ui-widget{
-		width:150px;
-	}
-	a{
-		.ui-button-icon-primary{
-			margin:10px 0px 5px 0px;
-		}
-	}
-}
-
-.step3 a.ui-button, .step3 a.ui-button:hover {
-	position: absolute;
-	top: 0;
-	margin-left: -1px;
-	padding: 0;
-	/* adjust styles for IE 6/7 */
-	*height: 1.7em;
-	*top: 0.1em;
-	background-color: #e6e6e6;
-  background-repeat: no-repeat;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
-  padding: 8px 0px 0px 10px;
-  height:40px;
-
+	margin-top: 20px;
 }
 

@@ -1,16 +1,18 @@
 @import "variables";
+@import url(http://fonts.googleapis.com/css?family=Handlee);
 
 html{
   background: none;
   background-color: transparent;
 }
 body{
-	background: url(<%=image_path "homepage_city.jpg"%>) no-repeat center center #749bc6;
-	-o-background-size: cover;
-	-moz-background-size: cover;
-	-ie-background-size: cover;
-	-webkit-background-size: cover;
-	background-size: cover;
+  background: url(<%=image_path "background.jpg"%>) no-repeat center center #749bc6;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -ie-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+
 	color:$font-color;
 	
 	a{
@@ -40,4 +42,17 @@ body{
 
 .well{
   background: rgba(0,0,0, 0.03);
+}
+
+.underline{
+	background:{
+	  image: url(<%=image_path "underline.png"%>);
+	  repeat: no-repeat;
+	  size: 100%;
+	  position: bottom;
+	}
+}
+
+.handwrite{
+	font-family: 'Handlee', cursive;
 }

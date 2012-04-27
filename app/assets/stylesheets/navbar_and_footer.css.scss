@@ -106,6 +106,17 @@ footer{
 		width:80%;
 	}
 	
+	.nav > li > a{
+		padding:20px;
+		font-size:18px;
+		&:hover{
+			background-color: $header-background-alpha;
+		}
+	}
+	
+	.nav .active > a:hover{
+		background: $header-background-hover;
+	}
 }
 
 .navbar-fixed-top{
@@ -129,7 +140,7 @@ footer{
 	float:left;
 }
 .phone{
-  margin-top:40px;
+  margin-top:60px;
 	width:45%;
 	max-width:305px;
 }

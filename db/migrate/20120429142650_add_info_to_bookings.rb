@@ -1,5 +1,8 @@
 class AddInfoToBookings < ActiveRecord::Migration
   def up
+    add_column :bookings, :name, :string
+    add_column :bookings, :email, :string, :limit => 128
+    add_column :bookings, :phone, :string, :limit => 128
     add_column :bookings, :city, :string, :limit => 128
     add_column :bookings, :state, :string, :limit => 32
     add_column :bookings, :zip, :string, :limit => 32
@@ -18,6 +21,9 @@ class AddInfoToBookings < ActiveRecord::Migration
       new_address = "#{booking.address}\n #{booking.city}, #{booking.state} #{booking.zip}"
       booking.update_attributes(:address => new_address)
     end
+    remove_column :bookings, :name
+    remove_column :bookings, :email
+    remove_column :bookings, :phone
     remove_column :bookings, :city
     remove_column :bookings, :state
     remove_column :bookings, :zip

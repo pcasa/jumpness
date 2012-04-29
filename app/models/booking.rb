@@ -2,12 +2,18 @@ class Booking < ActiveRecord::Base
   belongs_to :inflatable
   
   
-  attr_accessible :address, :duration, :inflatable_id, :party_date, :city, :state, :zip
+  attr_accessible :name, :email, :phone, :address, :city, :state, :zip, :duration, :inflatable_id, :party_date
   
   scope :coming_up, lambda { where("party_date >= ?", 12.hour.ago) } 
   
-  validates_presence_of :address, :duration, :party_date, :inflatable_id
+  validates_presence_of :name, :email, :phone, :address, :city, :state, :zip, :duration, :party_date, :inflatable_id
   
+  
+  validates :zip, :length => { :in => 5..9 }
+  validates :name, :length => { :minimum => 4 }
+  validates :phone, :length => { :minimum => 10 }
+  validates :address, :length => { :minimum => 4 }
+  validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create }
   
   validates :party_date,
     :date => {:after => Date.today, :message => 'must be after today'},
@@ -49,6 +55,7 @@ class Booking < ActiveRecord::Base
       dist_from = inflatable.company.distance_from(lines.join(', ')) 
       errors.add(:address, "address to far for delivery") if dist_from > inflatable.company.max_radius
     rescue
+      # possible problem here is company.  either it does not exist or address is not in db
       errors.add(:address, "having problem creating with address, please contact site administrator")
     end
   end

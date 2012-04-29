@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(:version => 20120429142650) do
     t.string   "address"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+    t.string   "name"
+    t.string   "email",         :limit => 128
+    t.string   "phone",         :limit => 128
     t.string   "city",          :limit => 128
     t.string   "state",         :limit => 32
     t.string   "zip",           :limit => 32

@@ -2,6 +2,15 @@ class BookingsController < ApplicationController
   before_filter :find_inflatable
   before_filter :find_or_build_booking
   
+  rescue_from ArgumentError do |exception|
+   if exception.message == 'invalid date'
+     flash[:error] = exception.message
+     redirect_to request.referer ? :back : root_url
+   else
+     raise StandardError, exception.message, exception.backtrace
+   end
+  end
+  
   
   def new
   end

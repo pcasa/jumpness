@@ -1,7 +1,8 @@
 class Booking < ActiveRecord::Base
   belongs_to :inflatable
   
-  attr_accessible :address, :duration, :inflatable_id, :party_date
+  
+  attr_accessible :address, :duration, :inflatable_id, :party_date, :city, :state, :zip
   
   scope :coming_up, lambda { where("party_date >= ?", 12.hour.ago) } 
   
@@ -12,7 +13,7 @@ class Booking < ActiveRecord::Base
     :date => {:after => Date.today, :message => 'must be after today'},
     :on => :create
   
-  validate :inflatable_is_bookable, :address_checker, :party_within_company_range
+  validate :inflatable_is_bookable, :party_within_company_range, :on => :create
   
   
   private

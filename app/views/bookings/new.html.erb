@@ -1,4 +1,8 @@
-
+<script type="text/javascript" charset="utf-8">
+	$(function(){
+		$('.datetime').timepicker();
+	});
+</script>
 
 <%= simple_form_for [@inflatable, @booking] do |f| %>
 <%= f.input :inflatable_id, :as => :hidden %>

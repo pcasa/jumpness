@@ -11,15 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120420120541) do
+ActiveRecord::Schema.define(:version => 20120429142650) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "inflatable_id"
     t.datetime "party_date"
     t.integer  "duration"
-    t.text     "address"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.string   "address"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "city",          :limit => 128
+    t.string   "state",         :limit => 32
+    t.string   "zip",           :limit => 32
   end
 
   add_index "bookings", ["inflatable_id"], :name => "index_bookings_on_inflatable_id"
@@ -104,7 +107,7 @@ ActiveRecord::Schema.define(:version => 20120420120541) do
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 5
+    t.integer  "year",       :limit => 8
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end

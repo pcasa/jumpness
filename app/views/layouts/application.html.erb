@@ -42,6 +42,13 @@
   <div class="clear"></div>
 
   <div class="container-fluid principal-container">
+	<% flash.each do |name, msg| %>
+	  <div class="alert alert-<%= twitterized_type(name) %>">
+		<h4><%= twitterized_type(name) %></h4>
+	    <a class="close" data-dismiss="alert">×</a>
+	    <%= msg %>
+	  </div>
+	<% end %>
     <%=yield%>
   </div>
   <div class="push"><!--//--></div>

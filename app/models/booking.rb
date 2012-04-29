@@ -25,8 +25,10 @@ class Booking < ActiveRecord::Base
   private
   
   def inflatable_is_bookable
-    puts "-- what is_bookable is returning: #{inflatable.is_bookable(party_date.strftime('%m/%d/%Y %H:%M %p'), duration)}"
-    errors.add(:party_date, "Unable to book for that date") unless inflatable.is_bookable(party_date.strftime('%m/%d/%Y %H:%M %p'), duration)
+    unless party_date.blank?
+      puts "-- what is_bookable is returning: #{inflatable.is_bookable(party_date.strftime('%m/%d/%Y %H:%M %p'), duration)}"
+      errors.add(:party_date, "Unable to book for that date") unless inflatable.is_bookable(party_date.strftime('%m/%d/%Y %H:%M %p'), duration)
+    end
   end
   
   def address_checker

@@ -4,6 +4,8 @@ class BookingsController < ApplicationController
   
   rescue_from ArgumentError do |exception|
    if exception.message == 'invalid date'
+     cookies.delete :fromdate
+     cookies.delete :duration
      flash[:error] = exception.message
      redirect_to request.referer ? :back : root_url
    else

@@ -2,7 +2,7 @@
 
 .hero-unit{
 	background: none;
-	box-shadow: 1px 1px 5px #aaccf2;
+	/*box-shadow: 1px 1px 5px #aaccf2;*/
 	margin: 40px auto;
 	padding: 20px;
 	float:none;
@@ -33,6 +33,12 @@
 	}
 	input:-moz-placeholder{
 		color:rgba(255,255,255,0.6);
+	}
+	.separator{
+		margin-left: 20px;
+		margin-right: 20px;
+		color:white;
+		font-size:$input-hero-fontsize;
 	}
 
 	.btn-large{

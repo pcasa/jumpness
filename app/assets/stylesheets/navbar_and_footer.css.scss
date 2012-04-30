@@ -52,12 +52,21 @@ footer{
 	padding-top: 20px;
 }
 
+.wrapper .navbar .navbar-inner .container-fluid .nav-collapse.in .nav li, .wrapper .navbar .navbar-inner .container-fluid .nav-collapse.in .nav li{
+	a{
+		&:hover{
+			background-color:rgba(255,255,255,0.05);
+			text-decoration:none;
+		}
+	}
+}
+
 .navbar{
 	color: $font-color;
 	.nav > li > a {
 		color: $font-color;
 	}
-	
+
 	a{
 		color: $font-color;
 		&:hover{
@@ -68,7 +77,7 @@ footer{
 			color: $font-color-anchor-visited;
 		}
 	}
-	
+
 	.active{
 		a, a:hover, a:visited{
 			background-color: $header-background;
@@ -86,7 +95,7 @@ footer{
 		height:10px;
 	}
 	.brand{
-		width:433px;
+		width:60%;
 		height:1px;
 		padding:0px;
 	}
@@ -103,7 +112,7 @@ footer{
 	.nav-collapse.in, .nav-collapse.collapse{
 		background-color: $header-background;
 		border-radius:10px;
-		width:80%;
+		width:85%;
 	}
 	
 	.nav > li > a{
@@ -134,13 +143,18 @@ footer{
 	margin-bottom:0px;
 }
 .logo{
+	position:absolute;
 	margin-top:-20px;
-	width:45%;
+	width:60%;
 	max-width:413px;
 	float:left;
 }
 .phone{
-  margin-top:60px;
-	width:45%;
+	position:absolute;
+	margin-top:85px;
+	width:50%;
 	max-width:305px;
+	position:relative;
+	float:right;
+	margin-right:5%;
 }

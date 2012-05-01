@@ -134,8 +134,8 @@ footer{
 }
 
 .logo_phone_wrapper{
-  position:relative;
-    display:inline-block;
+	position:relative;
+	display:inline-block;
 	width:95%;
 	height:160px;
 	top:20px;
@@ -150,11 +150,8 @@ footer{
 	float:left;
 }
 .phone{
-	position:absolute;
-	margin-top:85px;
-	width:50%;
-	max-width:305px;
 	position:relative;
-	float:right;
-	margin-right:5%;
+	margin-top:85px;
+	width:60%;
+	max-width:305px;
 }

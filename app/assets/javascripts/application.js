@@ -16,5 +16,8 @@
 //= require ckeditor/init
 //= require jquery-ui-timepicker-addon.js
 //= require jquery-combobox.js
+//= require jquery.backstretch.min.js
+//= require background.js.erb
+//= require responsive.js
 //= require home.js
 //= require twitter/bootstrap

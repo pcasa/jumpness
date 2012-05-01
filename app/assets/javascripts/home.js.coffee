@@ -1,4 +1,5 @@
 $(document).ready ->
+	
 	try
 		michigan_cities = ["Ada",
 		"Addison",

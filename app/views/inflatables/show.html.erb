@@ -43,7 +43,7 @@
 <h2>Booked For:</h2>
 <p>
 	<% @inflatable.bookings.coming_up.each do |booking| %>
-		<%= booking.party_date.strftime('%D %r') %> til <%= (booking.party_date + (booking.duration).hours).strftime('%D %r')  %> because duration is: <%= booking.duration %>
+		<%= booking.party_date.strftime('%D %r') %> till <%= (booking.party_date + (booking.duration).hours).strftime('%D %r')  %> because duration is: <%= booking.duration %>
 		<h3>Testing cover</h3>
 		<p>from date: <%= (booking.party_date..booking.party_date + (booking.duration).hours).cover?(DateTime.strptime(cookies[:fromdate], '%m/%d/%Y %H:%M %p') ) %><br />
 		to date: <%= (booking.party_date..booking.party_date + (booking.duration).hours).cover?(DateTime.strptime(cookies[:fromdate], '%m/%d/%Y %H:%M %p') + (cookies[:duration].to_i).hours ) %></p>
@@ -52,6 +52,7 @@
 
 <h3>You are looking for:</h3>
 <p>
+city, ST: <%= cookies[:citystate] %><br />
 start: <%= cookies[:fromdate] %><br />
 to: <%= (DateTime.strptime(cookies[:fromdate], '%m/%d/%Y %H:%M %p') + (cookies[:duration].to_i).hours).strftime('%D %r')  %><br/>
 which is a duration of:	<%= cookies[:duration] %> hours

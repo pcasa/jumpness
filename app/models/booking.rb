@@ -10,7 +10,7 @@ class Booking < ActiveRecord::Base
   
   
   validates :zip, :length => { :in => 5..9 }
-  validates :name, :length => { :minimum => 4 }
+  validates :name, :length => { :minimum => 3 }
   validates :phone, :length => { :minimum => 10 }
   validates :address, :length => { :minimum => 4 }
   validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create }

@@ -100,12 +100,10 @@ class InflatablesController < ApplicationController
       # origin = Geocoder.coordinates(params[:citystate])
       # puts "-- what origin returned: #{origin}"
       city_state = params[:citystate].split(', ').length > 1 ? params[:citystate] : params[:citystate] = "#{params[:citystate]}, MI"
-      if params[:from].present? && params[:to].present?
-        duration = params[:from] > params[:to] ? (params[:from] - (params[:to] + 12)) : (params[:from] - params[:to])
-      end
+      duration = (params[:to].to_i - params[:from].to_i)
       cookies.permanent[:citystate] = city_state 
       cookies.permanent[:fromdate] = params[:fromdate] if params[:fromdate].present?
-      cookies.permanent[:duration] = duration if duration
+      cookies.permanent[:duration] = duration 
       @companies = Company.near(city_state, 100)
       @inflatables = Inflatable.joins(:company).where('companies.id in (?)', @companies.collect{ |c| c.id })
     else

@@ -3,6 +3,8 @@ module ApplicationHelper
     puts "----- what I see in type: #{type}"
     case type
       when :alert
+        "error"
+      when :warning
         "warning"
       when :error
         "error"

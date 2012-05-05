@@ -1,4 +1,5 @@
 $(document).ready ->
+	
 	try
 		michigan_cities = ["Ada",
 		"Addison",
@@ -604,12 +605,12 @@ $(document).ready ->
 		$("#date-div").datepicker(
 			defaultDate: "+1w"
 			minDate: 2
-			maxDate: "+3M"
+			maxDate: "+6M"
 			changeMonth: false
 			numberOfMonths: 3
 			showAnim: "bounce"
 			altField: "#date"
-			altFormat: "DD, d MM, yy"
+			altFormat: "mm/dd/yy"
 			onSelect: (dateText, inst) ->
 				$('.step2').fadeOut('fast', ()->
 					$('.step3').fadeIn('slow')

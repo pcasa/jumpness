@@ -1,5 +1,13 @@
 <h1>Listing inflatables</h1>
 
-<%= render :partial => 'partials/inflatable', :collection => @inflatables %>
 
-
+<ul class="thumbnails">
+	<% @inflatables.each do |inflatable| %>
+	
+	<li class="span3">
+		<%= link_to raw(inflatable_thumbnail(inflatable)), inflatable%>
+	    
+	</li>
+	<% end %>
+  
+</ul>

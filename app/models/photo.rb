@@ -4,7 +4,7 @@ class Photo < ActiveRecord::Base
   
   has_paper_trail :on => [:update, :destroy]
   
-  attr_accessible :image, :inflatable_id, :primary, :remove_image, :image_cache
+  attr_accessible :image, :inflatable_id, :primary, :remove_image, :image_cache, :remote_image_url
   
   before_create :mark_as_primary
   

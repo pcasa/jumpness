@@ -1,10 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<ul class="thumbnails">
+
 <% @inflatable.photos.each do |photo| %>
-	<%= div_for photo do %>
-	<%= image_tag photo.image_url(:medium)%>
-	<% end %>
+<li class="span3">
+    <a href="#" class="thumbnail">
+      <%= image_tag photo.image_url(:medium)%>
+    </a>
+  </li>	
 <% end %>
+</ul>
+
 
 <p>
   <b>Company:</b>

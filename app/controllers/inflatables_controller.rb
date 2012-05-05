@@ -95,14 +95,20 @@ class InflatablesController < ApplicationController
   end
   
   def near_me
-    puts " -- params entering are: #{params}"
+    puts "-- params that came in: #{params}"
     if params[:citystate].present?
-      # origin = Geocoder.coordinates(params[:citystate])
-      # puts "-- what origin returned: #{origin}"
       city_state = params[:citystate].split(', ').length > 1 ? params[:citystate] : params[:citystate] = "#{params[:citystate]}, MI"
       duration = (params[:to].to_i - params[:from].to_i)
+      if params[:from].to_i > 12
+        datetime = "#{params[:date]} #{(params[:from].to_i - 12)}:00 pm"
+      elsif params[:from].to_i == 12
+        datetime = "#{params[:date]} #{(params[:from].to_i)}:00 pm"
+      else
+        datetime = "#{params[:date]} #{(params[:from].to_i)}:00 am"
+      end
+      puts "-- setting date time as: #{datetime}"
       cookies.permanent[:citystate] = city_state 
-      cookies.permanent[:fromdate] = params[:fromdate] if params[:fromdate].present?
+      cookies.permanent[:fromdate] = datetime 
       cookies.permanent[:duration] = duration 
       @companies = Company.near(city_state, 100)
       @inflatables = Inflatable.joins(:company).where('companies.id in (?)', @companies.collect{ |c| c.id })

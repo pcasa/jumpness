@@ -4,7 +4,16 @@
   <p>Search available rentals for your event below or browse all rentals.</p>
 <%= render :partial => 'partials/main_search_form' %>
 
-<%= render :partial => 'partials/inflatable', :collection => @inflatables %>
+<ul class="thumbnails">
+	<% @inflatables.each do |inflatable| %>
+	
+	<li class="span3">
+		<%= link_to raw(inflatable_thumbnail(inflatable)), inflatable%>
+	    
+	</li>
+	<% end %>
+  
+</ul>
 
 </div>
 </div>
